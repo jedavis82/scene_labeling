@@ -30,6 +30,7 @@ The Histogram of Forces [[2]](#2) implementation used by this project was suppli
 To install the HOF python package run the following commands from the repo root directory in the terminal: 
 
 `cd HoFPy` 
+
 `pip install .`
 
 # Usage 
