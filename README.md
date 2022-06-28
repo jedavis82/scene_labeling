@@ -31,7 +31,7 @@ The code base uses the YOLOv3 object detection model. Due to size constraints on
 The files required are: 
 - [yolov3.weights](https://pjreddie.com/media/files/yolov3.weights)
 
-The code base originally stored these files in the input/models/ directory, as can be seen in the object_detection.py script. 
+The code base originally stored these files in the input/models/ directory alongside the yolov3.cfg file.
 
 # Usage 
 The first script to execute is the `import_coco.py` script. This script will download the specified number of images
