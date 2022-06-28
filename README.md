@@ -12,12 +12,22 @@ The codebase was created using Python virtual environments. These environments a
 `python -m venv venv` 
 
 ## YOLOv3 Object Detection Model 
-The code base uses the YOLOv3 object detection model. Due to size constraints on the repository, this model could not be uploaded. The model can be downloaded from the [YOLOv3 site](https://pjreddie.com/darknet/yolo/). 
+The code base uses the YOLOv3 object detection model. Due to size constraints on the repository, the model weights could not be uploaded. The model weights can be downloaded from the [YOLOv3 site](https://pjreddie.com/darknet/yolo/). 
 
-The files required are: 
+The required file can be directly downloaded from: 
 - [yolov3.weights](https://pjreddie.com/media/files/yolov3.weights)
 
 The code base originally stored these files in the input/models/yolo/ directory alongside the yolov3.cfg file.
+
+## Installing required packages 
+The -requirements.txt- file contains the required Python packages in order to perform object detection and scene annotations. To install the required packages, run the following command from the terminal: 
+
+`pip install -r requirements.txt`
+
+## HoFPy
+The Histogram of Forces [[2]](#2) implementation used by this project was supplied by the University of Missouri MINDFUL (CITE MINDFUL) laboratory. 
+
+To install the HOF python package run th
 
 # Usage 
 The first script to execute is the `import_coco.py` script. This script will download the specified number of images
