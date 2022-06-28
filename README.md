@@ -29,8 +29,7 @@ For example, from an Anaconda prompt, run the following commands:
 The code base uses the YOLOv3 object detection model. Due to size constraints on the repository, this model could not be uploaded. The model can be downloaded from the [YOLOv3 site](https://pjreddie.com/darknet/yolo/). 
 
 The files required are: 
-- yolov3.cfg
-- yolov3.weights
+- [yolov3.weights](https://pjreddie.com/media/files/yolov3.weights)
 
 The code base originally stored these files in the input/models/ directory, as can be seen in the object_detection.py script. 
 
