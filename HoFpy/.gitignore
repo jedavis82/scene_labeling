@@ -1,0 +1,5 @@
+.ipynb_checkpoints
+.vscode
+hofpy.egg-info
+build
+venv

@@ -1,0 +1,97 @@
+object,general_category,subcategory_1,subcategory_2
+person,person,n/a,n/a
+bicycle,vehicle,personal,n/a
+car,vehicle,personal,n/a
+motorcycle,vehicle,personal,n/a
+motorbike,vehicle,personal,n/a
+airplane,vehicle,passenger,n/a
+aeroplane,vehicle,passenger,n/a
+bus,vehicle,passenger,n/a
+train,vehicle,passenger,n/a
+truck,vehicle,personal,n/a
+boat,vehicle,personal,n/a
+bench,urban,sidewalk,n/a
+traffic light,urban,road,n/a
+fire hydrant,urban,sidewalk,n/a
+street sign,urban,road,n/a
+stop sign,urban,road,n/a
+parking meter,urban,road,n/a
+bird,animal,domesticated,pet
+cat,animal,domesticated,pet
+dog,animal,domesticated,pet
+horse,animal,domesticated,farm
+sheep,animal,domesticated,farm
+cow,animal,domesticated,farm
+elephant,animal,non-domesticated,large
+bear,animal,non-domesticated,large
+zebra,animal,non-domesticated,large
+giraffe,animal,non-domesticated,large
+hat,clothing,head,worn
+backpack,clothing,back,carried
+umbrella,clothing,hands,carried
+shoe,clothing,feet,worn
+eye glasses,clothing,head,worn
+handbag,clothing,hands,carried
+tie,clothing,chest,worn
+suitcase,clothing,hands,carried
+frisbee,sports,frisbee,n/a
+skis,sports,skiing,n/a
+snowboard,sports,snowboarding,n/a
+sports ball,sports,playing,n/a
+kite,sports,flying kite,n/a
+baseball bat,sports,baseball,n/a
+baseball glove,sports,baseball,n/a
+skateboard,sports,skateboarding,n/a
+surfboard,sports,surfing,n/a
+tennis racket,sports,tennis,n/a
+bottle,food and tableware,beverage,drink
+plate,food and tableware,utensil,used
+wine glass,food and tableware,utensil,drink
+cup,food and tableware,utensil,drink
+fork,food and tableware,utensil,used
+knife,food and tableware,utensil,used
+spoon,food and tableware,utensil,used
+bowl,food and tableware,utensil,used
+banana,food and tableware,food,eaten
+apple,food and tableware,food,eaten
+sandwich,food and tableware,food,eaten
+orange,food and tableware,food,eaten
+broccoli,food and tableware,food,eaten
+carrot,food and tableware,food,eaten
+hot dog,food and tableware,food,eaten
+pizza,food and tableware,food,eaten
+donut,food and tableware,food,eaten
+cake,food and tableware,food,eaten
+chair,furniture and home decor,furniture,sat on
+couch,furniture and home decor,furniture,sat on
+potted plant,furniture and home decor,decoration,n/a
+pottedplant,furniture and home decor,decoration,n/a
+bed,furniture and home decor,furniture,laid on
+mirror,furniture and home decor,decoration,n/a
+dining table,furniture and home decor,furniture,sat on
+diningtable,furniture and home decor,furniture,sat on
+window,furniture and home decor,decoration,n/a
+desk,furniture and home decor,furniture,sat on
+door,furniture and home decor,decoration,n/a
+vase,furniture and home decor,decoration,n/a
+tv,electronics,large,watched
+tvmonitor,electronics,large,watched
+laptop,electronics,small,used
+mouse,electronics,small,used
+remote,electronics,small,used
+keyboard,electronics,small,used
+cell phone,electronics,small,talked on
+microwave,appliances,small,kitchen
+oven,appliances,large,kitchen
+toaster,appliances,small,kitchen
+sink,appliances,small,bathroom
+refrigerator,appliances,large,kitchen
+blender,appliances,small,kitchen
+hair dryer,appliances,small,bathroom
+hair drier,appliances,small,bathroom
+toilet,appliances,large,bathroom
+book,household items,read,n/a
+clock,household items,used,n/a
+scissors,household items,used,n/a
+toothbrush,household items,used,n/a
+teddy bear,household items,held,n/a
