@@ -1,30 +1,16 @@
-# scene_labeling
-This codebase contains the implementation of the Scene To Text system that incorporates spatial relationship information developed as PhD dissertation research in CITE PHD. 
+# Scene Labeling
+This code base contains the S2T system constructed in CITE PAPER.
+
+This project was created and tested using Python version 3.10. 
 
 This code is free to use but the authors ask that if you make use of any of the code during research you cite the work using PAPER CITATION. 
 
 # Installation 
-## Anaconda Environment
-The codebase makes use of an Anaconda enviroment. This environment can be installed by running the following command from the conda_env directory in an Anaconda prompt: 
+## Virtual environment
+The codebase was created using Python virtual environments. These environments are recommended as they will not install packages directly to your system. A Python virtual environment can be created using the following command from a terminal: 
 
-`conda env create -f environment.yml` 
+`python -m venv venv` 
 
-## MatLab Engine for Python
-The Histogram of Forces (HOF) code is used to compute the spatial relationships between object two tuples in an image. 
-
-The HOF code is implemented in MatLab and the MatLab engine for Python is required to run the HOF code. 
-
-Installation instructions for the MatLab engine for Python can be found at this [link](https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html).  
-
-You will need to follow the instructions for intalling the engine API at the system command prompt and this will need to be done inside of the Anaconda environment. 
-
-For example, from an Anaconda prompt, run the following commands: 
-
-`conda activate scene_labeling`
-
-`cd <matlabroot>\extern\engines\python`
-
-`python setup.py install`
 ## YOLOv3 Object Detection Model 
 The code base uses the YOLOv3 object detection model. Due to size constraints on the repository, this model could not be uploaded. The model can be downloaded from the [YOLOv3 site](https://pjreddie.com/darknet/yolo/). 
 
