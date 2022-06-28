@@ -17,7 +17,7 @@ The code base uses the YOLOv3 object detection model. Due to size constraints on
 The required file can be directly downloaded from: 
 - [yolov3.weights](https://pjreddie.com/media/files/yolov3.weights)
 
-The code base originally stored these files in the input/models/yolo/ directory alongside the yolov3.cfg file.
+The code base originally stored these files in the `input/models/yolo/` directory alongside the yolov3.cfg file.
 
 ## Installing required packages 
 The *requirements.txt* file contains the required Python packages in order to perform object detection and scene annotations. To install the required packages, run the following command from the repo root directory in the terminal: 
