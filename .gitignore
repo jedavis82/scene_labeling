@@ -131,3 +131,4 @@ dmypy.json
 .idea/
 
 input/models/yolo/yolov3.weights
+/input/models/torchvision_models/
