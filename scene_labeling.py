@@ -14,13 +14,10 @@ The system will be separated into 3 parts
     Returns tuple annotations in both the general and person domain (where applicable)
 """
 
-# TODO: The class definition is going to be awful, but just pass in all the required arguments as default
-# TODO: They can be changed, but most of the ones we use are static anyway
-# TODO: Move the object detection code inside of this class. It seems to be working.
-
 from libs.object_detection import YoloObjectDetection
 from libs.spatial_relationships import SpatialRelationships
 from libs.metadata import MetaData
+from libs.annotation.general import GeneralRules
 
 
 class SceneLabeling:
@@ -28,23 +25,33 @@ class SceneLabeling:
         self.__object_detection = YoloObjectDetection()
         self.__spatial_relationships = SpatialRelationships()
         self.__metadata = MetaData()
+        self.__general_rules = GeneralRules()
+
         self.__object_detection_results = dict(dict())
-        self.__spatial_relationship_results = dict(dict())
         self.__metadata_results = dict(dict())
+        self.__image_annotation_results = dict(dict())
 
     def process_image(self, image=None, image_name=None):
         assert image is not None, "Must supply an input image to process"
         assert image_name is not None, "Must supply an image name"
-        # Compute the object detection results
+
+        # Compute the object localizations
         key, od_result = self.__object_detection.compute_detections(image, image_name)
         self.__object_detection_results[key] = od_result
+
         # Compute the image metadata
         meta = self.__metadata.compute_metadata(image)
         self.__metadata_results[key] = meta
-        # Compute the spatial relationships here
+
+        # Compute the spatial relationships
         key, sr_result = self.__spatial_relationships.compute_spatial_relationships(od_result)
-        self.__spatial_relationship_results[key] = sr_result
-        # return od_result
+        self.__image_annotation_results[key] = sr_result
+
+        # Compute the general interaction summaries
+        key, general_annotation = self.__general_rules.compute_interactions(sr_result)
+        self.__image_annotation_results[key] = general_annotation
+
+        # Compute the person domain interaction summaries
 
     def get_object_detection_results(self, key=None):
         """
@@ -58,18 +65,6 @@ class SceneLabeling:
         else:
             return self.__object_detection_results
 
-    def get_spatial_relationship_results(self, key=None):
-        """
-        Return all spatial relationship results if a key is not specified. Otherwise, return spatial relationship
-        results for a specific image
-        :param key: None or relative path to image
-        :return: Spatial relationship results for image(s)
-        """
-        if key in self.__spatial_relationship_results.keys():
-            return self.__spatial_relationship_results[key]
-        else:
-            return self.__spatial_relationship_results
-
     def get_metadata_results(self, key=None):
         """
         Return all metadata results if a key is not specified. Otherwise
@@ -81,3 +76,20 @@ class SceneLabeling:
             return self.__metadata_results[key]
         else:
             return self.__metadata_results
+
+    def get_image_annotations(self, key=None):
+        """
+        Return all spatial relationship results if a key is not specified. Otherwise, return spatial relationship
+        results for a specific image
+        :param key: None or relative path to image
+        :return: Spatial relationship results for image(s)
+        """
+        if key in self.__image_annotation_results.keys():
+            return self.__image_annotation_results[key]
+        else:
+            return self.__image_annotation_results
+
+
+
+# TODO: Once everything has been computed, make a method that will combine the results into one json
+# result for each image. Just don't need to return all of the redundant information. Need one succint result

@@ -31,8 +31,8 @@ if __name__ == '__main__':
 
         model.process_image(image, name)
         det_results = model.get_object_detection_results(name)
-        sr_results = model.get_spatial_relationship_results(name)
         metadata_results = model.get_metadata_results(name)
+        annotation_results = model.get_image_annotations(name)
 
         print('Image Metadata:')
         md_labels = json.loads(metadata_results['labels'])
@@ -40,9 +40,10 @@ if __name__ == '__main__':
         for lab, conf in zip(md_labels, md_confidences):
             print(f'Label: {lab}. Confidence: {conf}')
 
-        print('Image spatial relationships:')
-        for sr in sr_results:
-            print(sr['spatial_relationship'])
+        print('Image annotations:')
+        for ar in annotation_results:
+            print('Spatial relationship: ' + ar['spatial_relationship'] + '. General interaction: ' +
+                  ar['general_interaction'] + '. Person interaction: ')
 
         boxes = json.loads(det_results['bounding_boxes'])
         labels = json.loads(det_results['labels'])
