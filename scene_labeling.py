@@ -46,7 +46,7 @@ class SceneLabeling:
         self.__metadata_results[key] = meta
 
         # Compute the spatial relationships
-        key, sr_result = self.__spatial_relationships.compute_spatial_relationships(od_result)
+        key, sr_result = self.__spatial_relationships.compute_spatial_relationships(od_result, meta)
         self.__image_annotation_results[key] = sr_result
 
         # Compute the general interaction summaries
@@ -54,7 +54,7 @@ class SceneLabeling:
         self.__image_annotation_results[key] = general_annotation
 
         # Compute the person domain interaction summaries
-        key, person_annotation = self.__person_rules.compute_interactions(sr_result, meta)
+        key, person_annotation = self.__person_rules.compute_interactions(sr_result)
         self.__image_annotation_results[key] = person_annotation
 
     def get_object_detection_results(self, key=None):
@@ -92,8 +92,3 @@ class SceneLabeling:
             return self.__image_annotation_results[key]
         else:
             return self.__image_annotation_results
-
-
-
-# TODO: Once everything has been computed, make a method that will combine the results into one json
-# result for each image. Just don't need to return all of the redundant information. Need one succint result

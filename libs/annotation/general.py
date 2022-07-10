@@ -30,7 +30,7 @@ class GeneralRules:
     def __create_rules(self):
         """
         Construct the rule base for the general categories
-        These rules simply indicate whether or not objects are interacting
+        These rules simply indicate whether objects are interacting
         :return:
         """
         self.__interacting_rule_1 = ctrl.Rule(self.__overlap['Overlap'] &

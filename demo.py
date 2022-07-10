@@ -30,21 +30,15 @@ if __name__ == '__main__':
         image = cv2.imread(path, cv2.IMREAD_COLOR)
 
         model.process_image(image, name)
-        det_results = model.get_object_detection_results(name)
-        metadata_results = model.get_metadata_results(name)
         annotation_results = model.get_image_annotations(name)
 
-        print('Image Metadata:')
-        md_labels = json.loads(metadata_results['labels'])
-        md_confidences = json.loads(metadata_results['confidences'])
-        for lab, conf in zip(md_labels, md_confidences):
-            print(f'Label: {lab}. Confidence: {conf}')
-
-        print('Image annotations:')
+        print(f'{name} annotations:')
         for ar in annotation_results:
-            print('Spatial relationship: ' + ar['spatial_relationship'] + '. General interaction: ' +
-                  ar['general_interaction'] + '. Person interaction: ' + ar['person_interaction'])
-
-        boxes = json.loads(det_results['bounding_boxes'])
-        labels = json.loads(det_results['labels'])
-        draw_detection(image, boxes, labels)
+            print('Spatial relationship: ' + ar['spatial_relationship']
+                  + '. General interaction: ' + ar['general_interaction'] + '. Person interaction: '
+                  + ar['person_interaction'])
+            arg_box = json.loads(ar['arg_bounding_box'])
+            arg_label = ar['arg_label']
+            ref_box = json.loads(ar['ref_bounding_box'])
+            ref_label = ar['ref_label']
+            draw_detection(image.copy(), [arg_box, ref_box], [arg_label, ref_label])

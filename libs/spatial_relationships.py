@@ -9,7 +9,7 @@ import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 from sklearn.preprocessing import minmax_scale
 import hofpy
-from utils import convert_boxes, get_image_tuples
+from utils import convert_boxes, get_image_tuples, convert_meta_labels
 import cv2
 
 
@@ -263,13 +263,17 @@ class SpatialRelationships:
         GIoU = IoU - ((area_b_c - U) / area_b_c)
         return GIoU, IoU
 
-    def compute_spatial_relationships(self, object_detection_results=None):
+    def compute_spatial_relationships(self, object_detection_results=None, metadata=None):
         """
         :param object_detection_results:
+        :param metadata:
         :return:
         """
         assert object_detection_results is not None, "Must supply image's object detection results"
+        assert metadata is not None, "Must supply image's metadata results"
 
+        # Grab the metadata label and append to the spatial relationship results. Will be used in the FIS computations
+        meta_label = convert_meta_labels(json.loads(metadata['labels']))
         # Return a list of dictionaries as the result for this image
         image_results = list(dict())
         boxes = convert_boxes(object_detection_results['bounding_boxes'])
@@ -316,7 +320,7 @@ class SpatialRelationships:
             img_summary_result = {
                 'key': key, 'relative_path': rel_path, 'img_name': img_name, 'arg_label': arg_label,
                 'arg_bounding_box': json.dumps(arg_box), 'ref_label': ref_label,
-                'ref_bounding_box': json.dumps(ref_box), 'overlap': iou, 'proximity': giou,
+                'ref_bounding_box': json.dumps(ref_box), 'metadata': meta_label, 'overlap': iou, 'proximity': giou,
                 'f0': f0, 'f2': f2, 'hybrid': hybrid, 'spatial_relationship': img_summary
             }
             image_results.append(img_summary_result)

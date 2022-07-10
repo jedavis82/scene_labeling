@@ -93,16 +93,14 @@ class PersonRules:
         subdomain_category = self.__get_subdomain_category(base_label)
         return general_category, domain_category, subdomain_category, base_label
 
-    def compute_interactions(self, sr_result=None, metadata=None):
+    def compute_interactions(self, sr_result=None):
         """
         Take in the spatial relationship results, and call the appropriate FIS to compute the person-object
         image annotation
         :param sr_result: Computed spatial relationship results for an image
-        :param metadata: Computed metadata information for an image
         :return: The person domain image annotation for each object tuple in an image
         """
         assert sr_result is not None, "Must supply spatial relationship results for image"
-        assert metadata is not None, "Must supply image metadata"
 
         # Return a list of dictionaries as the result of the image
         person_annotations = list(dict())
@@ -121,7 +119,7 @@ class PersonRules:
             f2 = r['f2']
             hybrid = r['hybrid']
             sr_angle = get_consensus_angle(f0, f2, hybrid)
-            meta_label = convert_meta_labels(json.loads(metadata['labels']))
+            meta_label = r['metadata']
 
             gen_cat, dom_cat, sub_cat, base_label = self.get_categories(label)
             if gen_cat == 'animal':
