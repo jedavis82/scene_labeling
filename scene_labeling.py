@@ -18,6 +18,7 @@ from libs.object_detection import YoloObjectDetection
 from libs.spatial_relationships import SpatialRelationships
 from libs.metadata import MetaData
 from libs.annotation.general import GeneralRules
+from libs.annotation.person import PersonRules
 
 
 class SceneLabeling:
@@ -26,6 +27,7 @@ class SceneLabeling:
         self.__spatial_relationships = SpatialRelationships()
         self.__metadata = MetaData()
         self.__general_rules = GeneralRules()
+        self.__person_rules = PersonRules()
 
         self.__object_detection_results = dict(dict())
         self.__metadata_results = dict(dict())
@@ -52,6 +54,8 @@ class SceneLabeling:
         self.__image_annotation_results[key] = general_annotation
 
         # Compute the person domain interaction summaries
+        key, person_annotation = self.__person_rules.compute_interactions(sr_result, meta)
+        self.__image_annotation_results[key] = person_annotation
 
     def get_object_detection_results(self, key=None):
         """

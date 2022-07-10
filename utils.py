@@ -48,6 +48,25 @@ def get_image_tuples(img_labels=None):
     return no_inverse_tuples
 
 
+def get_consensus_angle(f0, f2, hyb):
+    if f0 == f2:
+        return f0
+    if f0 == hyb:
+        return hyb
+    if f2 == hyb:
+        return hyb
+    else:
+        return hyb
+
+
+def convert_meta_labels(labels):
+    for l in labels:
+        if l == 'soccer_ball' or l == 'tennis_ball' or l == 'baseball':
+            return l
+    else:
+        return labels[0]
+
+
 def draw_detection(img, boxes, labels):
     for box, label in zip(boxes, labels):
         cv2.rectangle(img, (box[0], box[1]), (box[2], box[3]), (255, 0, 0), 2)

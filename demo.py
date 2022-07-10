@@ -43,7 +43,7 @@ if __name__ == '__main__':
         print('Image annotations:')
         for ar in annotation_results:
             print('Spatial relationship: ' + ar['spatial_relationship'] + '. General interaction: ' +
-                  ar['general_interaction'] + '. Person interaction: ')
+                  ar['general_interaction'] + '. Person interaction: ' + ar['person_interaction'])
 
         boxes = json.loads(det_results['bounding_boxes'])
         labels = json.loads(det_results['labels'])
