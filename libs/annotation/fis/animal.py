@@ -1,7 +1,7 @@
 """
 FIS for the person-animal interactions
 """
-from fuzzy_utils import create_universes_membership_functions
+from libs.annotation.fuzzy_utils import create_universes_membership_functions
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 import numpy as np

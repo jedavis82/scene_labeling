@@ -2,7 +2,7 @@
 Implement the general interaction rule base for the scene annotation system
 """
 from collections import defaultdict
-from fuzzy_utils import create_universes_membership_functions
+from libs.annotation.fuzzy_utils import create_universes_membership_functions
 import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl

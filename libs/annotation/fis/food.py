@@ -4,7 +4,7 @@ FIS for the person-food interactions
 from skfuzzy import control as ctrl
 import skfuzzy as fuzz
 import numpy as np
-from fuzzy_utils import create_universes_membership_functions
+from libs.annotation.fuzzy_utils import create_universes_membership_functions
 
 
 class FoodRules:
