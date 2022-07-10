@@ -105,5 +105,5 @@ Matsakis, P., Keller, J., Sjahputera, O., and Marjamaa, J. “The Use of Force H
 <a id="5">[5]</a>
 Rezatofighi, H., Tsoi, N., Gwak, J., Sadeghian, A., Reid, I., and Savarese, S, "Generalized Intersection Over Union: A Metric and A Loss for Bounding Box Regression", IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2019.
 
-<a id="6>[6]</a>
+<a id="6">[6]</a>
 Anderson, D. and Buck, A. "Mizzou Information and Data Fusion Laboratory." Accessed: July 2022. Available: https://github.com/MizzouINDFUL
