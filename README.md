@@ -71,4 +71,4 @@ Rezatofighi, H., Tsoi, N., Gwak, J., Sadeghian, A., Reid, I., and Savarese, S, "
 Anderson, D. and Buck, A. "Mizzou Information and Data Fusion Laboratory." Accessed: July 2022. Available: https://github.com/MizzouINDFUL
 
 <a id="7">[7]</a>
-Davis, Jeremy et al. "Spatial Relationship-Driven Computer Vision Image Data Set Annotation." IEEE World Congress on Computational Intelligence. July 2022. 
+J. Davis et al., "Spatial Relationship-Driven Computer Vision Image Data Set Annotation," 2022 International Joint Conference on Neural Networks (IJCNN), 2022, pp. 1-8, doi: 10.1109/IJCNN55064.2022.9892975.
